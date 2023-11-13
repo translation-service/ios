@@ -64,6 +64,7 @@ public class TranslationService {
                 }
             case .failure(let error):
                 print("Fehler beim Anfordern der Daten: \(error.localizedDescription)")
+                completionHandler(NeedFetchResult(required: false))
             }
             semaphore.signal()
         }
